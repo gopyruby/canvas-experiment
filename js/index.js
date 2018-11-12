@@ -1,3 +1,26 @@
+function findCanvasMidpoint() {
+  var cDomElem = document.getElementById("drawingBoard");
+  var ctx = cDomElem.getContext("2d");
+
+  /*
+   * 0-----------
+   * |          |
+   * |          |
+   * ------------
+   */
+   
+   return {
+       'x': cDomElem.width / 2,
+       'y': cDomElem.height / 2
+   }
+}
+
+function drawCircle() {
+  var cDomElem = document.getElementById("drawingBoard");
+  var ctx = cDomElem.getContext("2d");
+
+}
+
 function drawLine(settings, colour, lineType) {
   /*
    * Could validate settings using something like JSONSchema
@@ -42,7 +65,12 @@ function drawLine(settings, colour, lineType) {
   }
 
   if (lineType == "horizontal") {
+    //TODO: Fix limitation of function, add ability to set direction of line.
     ctx.lineTo(cDomElem.width, settings.y + 1);
+  }
+
+  if (lineType == "vertical") {
+    ctx.lineTo(settings.x, 0);
   }
 
   ctx.stroke();
@@ -59,9 +87,14 @@ function drawImagePlaceholder() {
   ctx.stroke();
 }
 
-drawLine({
-  'x': 0,
-  'y': 0,
-  'atZero': true
-}, '#f00000', 'diagonal');
+// drawLine({
+//   'x': 0,
+//   'y': 0,
+//   'atZero': true
+// }, '#f00000', 'horizontal');
+
+
+drawLine(findCanvasMidpoint(), '#f00000', 'horizontal');
+drawLine(findCanvasMidpoint(), '#f00000', 'vertical');
+
 // drawImagePlaceholder();
