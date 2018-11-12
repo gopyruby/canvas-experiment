@@ -31,7 +31,8 @@ function drawLine(settings, colour, lineType) {
     //   'x': settings.x,
     //   'y': settings.y
     // }
-  ]
+  ];
+
   if(lineType == "diagonal") {
     console.assert(settings.atZero, "Currently a diagonal line is only supported when the line is at a zero point");
     console.assert(zeroPoints.indexOf(settings.coords), "If you are seeing this message, validate your settings are correct. It is possible the zero point you have provided is not yet supported.")
