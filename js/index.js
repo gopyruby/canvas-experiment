@@ -15,6 +15,18 @@ function findCanvasMidpoint() {
    }
 }
 
+function drawArch() {
+  var cDomElem = document.getElementById("drawingBoard");
+  var ctx = cDomElem.getContext("2d");
+
+  // x, y, r, sAngle, eAngle, counterclockwise
+  coords = findCanvasMidpoint();
+  ctx.arc(coords.x, coords.y, cDomElem.width - coords.x, )
+  // TO BE CONTINUED...
+  // https://www.w3schools.com/tags/canvas_arc.asp
+
+}
+
 function drawCircle() {
   var cDomElem = document.getElementById("drawingBoard");
   var ctx = cDomElem.getContext("2d");
@@ -94,7 +106,7 @@ function drawImagePlaceholder() {
 // }, '#f00000', 'horizontal');
 
 
-drawLine(findCanvasMidpoint(), '#f00000', 'horizontal');
-drawLine(findCanvasMidpoint(), '#f00000', 'vertical');
+// drawLine(findCanvasMidpoint(), '#f00000', 'horizontal');
+// drawLine(findCanvasMidpoint(), '#f00000', 'vertical');
 
 // drawImagePlaceholder();
